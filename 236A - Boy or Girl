@@ -1,0 +1,25 @@
+// Problem: 236A - Boy or Girl
+// Description: Count distinct characters in string
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char s[100];
+    int freq[26]={0},count=0;
+
+    scanf("%s",s);
+
+    for(int i=0;s[i];i++){
+        freq[s[i]-'a']=1;
+    }
+
+    for(int i=0;i<26;i++){
+        if(freq[i]) count++;
+    }
+
+    if(count%2==0)
+        printf("CHAT WITH HER!");
+    else
+        printf("IGNORE HIM!");
+}
